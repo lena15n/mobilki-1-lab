@@ -66,10 +66,6 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, "ab lol", Toast.LENGTH_SHORT).show();
                 return true;
             }
-            case R.id.action_settings: {
-                Toast.makeText(this, "settnigs lol", Toast.LENGTH_SHORT).show();
-                return true;
-            }
             case  R.id.action_exit: {
                 Toast.makeText(this, "exitt lol", Toast.LENGTH_SHORT).show();
                 return true;
@@ -79,20 +75,22 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+   // @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.user_name) {
-            // Handle the camera action
-        } else if (id == R.id.bio) {
-
-        } else if (id == R.id.tags) {
-
-        } else if (id == R.id.action_settings) {
-
+        if (id == R.id.phrasebook) {
+            Toast.makeText(this, R.string.open_phrasebook, Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.sms_translation) {
+            Toast.makeText(this, R.string.open_sms_translation, Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.offline_translation) {
+            //open activity 2
+        } else if (id == R.id.settings) {
+            Toast.makeText(this, R.string.open_settings, Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.help) {
+            Toast.makeText(this, R.string.open_help, Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

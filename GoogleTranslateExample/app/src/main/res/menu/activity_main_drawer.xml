@@ -3,17 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/user_name"
+            android:id="@+id/phrasebook"
             android:icon="@drawable/ic_sentiment_satisfied_black_24dp"
-            android:title="@string/action_username"/>
+            android:title="@string/phrasebook"/>
         <item
-            android:id="@+id/bio"
-            android:title="@string/action_bio"/>
+            android:id="@+id/sms_translation"
+            android:title="@string/sms_translation"/>
         <item
-            android:id="@+id/tags"
-            android:title="@string/action_tags"/>
+            android:id="@+id/offline_translation"
+            android:title="@string/offline_translation"/>
         <item
             android:id="@+id/settings"
-            android:title="@string/action_settings"/>
+            android:title="@string/settings"/>
+        <item
+            android:id="@+id/help"
+            android:title="@string/help"/>
     </group>
 </menu>
