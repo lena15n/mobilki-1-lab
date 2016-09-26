@@ -1,5 +1,6 @@
 package com.lena.googletranslateexample;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -63,7 +64,10 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch (id){
             case R.id.action_about: {
-                Toast.makeText(this, "ab lol", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                AboutFragment  aboutFragment = new AboutFragment();
+                aboutFragment.show(fragmentManager, getString(R.string.about_dialog_title));
+
                 return true;
             }
             case R.id.action_settings: {
