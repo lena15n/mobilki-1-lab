@@ -15,6 +15,11 @@
 
     <string name="about_dialog_title">About</string>
     <string name="about_dialog_text">Laboratory work#1\nAuthor: Nazarova Elena\nGroup: 6122M\nUniversity: SSAU/SNIU</string>
+    <string name="ok_button_text">OK</string>
 
-    <string name="fire">OK</string>
+    <string name="exit_dialog_title">Exit Confirmation</string>
+    <string name="exit_dialog_text">Are you sure want to exit?</string>
+    <string name="yes_button_text">Yes</string>
+    <string name="no_button_text">No</string>
+
 </resources>

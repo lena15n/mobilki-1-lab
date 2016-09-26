@@ -75,7 +75,10 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
             case  R.id.action_exit: {
-                Toast.makeText(this, "exitt lol", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                ExitFragment  exitFragment = new ExitFragment();
+                exitFragment.show(fragmentManager, getString(R.string.exit_dialog_title));
+
                 return true;
             }
         }
