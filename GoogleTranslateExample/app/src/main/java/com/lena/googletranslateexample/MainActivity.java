@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
             toggle.syncState();
         }
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        
+
         if (drawer != null) {
             drawer.closeDrawer(GravityCompat.START);
         }
