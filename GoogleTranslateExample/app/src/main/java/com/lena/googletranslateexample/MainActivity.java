@@ -2,6 +2,9 @@ package com.lena.googletranslateexample;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -62,16 +65,21 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         switch (id){
-            case R.id.action_about: {
-                Toast.makeText(this, "ab lol", Toast.LENGTH_SHORT).show();
+            case R.id.about: {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                AboutFragment aboutFragment = new AboutFragment();
+                fragmentTransaction.add(R.id.fragment_container, (Fragment) aboutFragment);
+                fragmentTransaction.commit();
+
                 return true;
             }
-            case R.id.action_settings: {
-                Toast.makeText(this, "settnigs lol", Toast.LENGTH_SHORT).show();
+            case R.id.settings: {
+                //activity
                 return true;
             }
-            case  R.id.action_exit: {
-                Toast.makeText(this, "exitt lol", Toast.LENGTH_SHORT).show();
+            case  R.id.exit: {
+                //dialog
                 return true;
             }
         }
@@ -79,24 +87,27 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.user_name) {
-            // Handle the camera action
+            Toast.makeText(this, R.string.open_username, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.bio) {
-
+            Toast.makeText(this, R.string.open_bio, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.tags) {
-
+            Toast.makeText(this, R.string.open_tags, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.action_settings) {
-
+            //new activity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
+        if (drawer != null) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
         return true;
     }
 }
