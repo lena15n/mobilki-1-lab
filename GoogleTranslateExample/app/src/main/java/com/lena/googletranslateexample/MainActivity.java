@@ -70,8 +70,9 @@ public class MainActivity extends AppCompatActivity
 
                 return true;
             }
-            case R.id.action_settings: {
-                Toast.makeText(this, "settnigs lol", Toast.LENGTH_SHORT).show();
+            case R.id.action_buy: {
+                Toast.makeText(this, R.string.buy_product_text, Toast.LENGTH_SHORT).show();
+
                 return true;
             }
             case  R.id.action_exit: {
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.tags) {
 
-        } else if (id == R.id.action_settings) {
+        } else if (id == R.id.action_buy) {
 
         }
 

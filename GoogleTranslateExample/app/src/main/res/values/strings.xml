@@ -22,4 +22,6 @@
     <string name="yes_button_text">Yes</string>
     <string name="no_button_text">No</string>
 
+    <string name="buy_product_text">Ok, just give me a dollar</string>
+
 </resources>
