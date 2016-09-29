@@ -6,11 +6,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowButtonStyle">@style/ToolbarOverflowTheme</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ToolbarOverflowTheme" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_toolbar_question</item>
+    </style>
+
+    <style name="ToolbarNavigationTheme" parent="Widget.Design.NavigationView">
+        <item name="android:src">@drawable/ic_toolbar_navigation</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

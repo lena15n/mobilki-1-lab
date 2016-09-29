@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/user_name"
-            android:icon="@drawable/ic_sentiment_satisfied_black_24dp"
+            android:icon="@drawable/ic_avatar"
             android:title="@string/action_username"/>
         <item
             android:id="@+id/bio"
