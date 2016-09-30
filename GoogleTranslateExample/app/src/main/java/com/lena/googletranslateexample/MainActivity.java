@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
+
+
     }
 
     @Override
@@ -98,9 +100,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.user_name) {
-            // Handle the camera action
-        } else if (id == R.id.bio) {
+        if (id == R.id.bio) {
 
         } else if (id == R.id.tags) {
 
