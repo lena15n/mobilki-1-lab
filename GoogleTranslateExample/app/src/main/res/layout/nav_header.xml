@@ -9,23 +9,23 @@
               android:background="@color/colorPrimary">
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="66dp"
-        app:srcCompat="@drawable/ic_avatar"
+        android:layout_width="104dp"
+        android:layout_height="109dp"
+        app:srcCompat="@mipmap/ic_avatar_no_transparent"
         android:id="@+id/imageView"
         />
 
     <TextView
         android:text="@string/action_username"
         android:layout_width="189dp"
-        android:layout_height="66dp"
+        android:layout_height="108dp"
         android:id="@+id/textView2"
         android:textSize="30sp"
         android:textColor="@color/colorText"
         android:textAlignment="center"
         android:textDirection="inherit"
         android:labelFor="@+id/imageView"
-        android:paddingTop="15dp"
+        android:paddingTop="35dp"
         android:paddingStart="-45dp"/>
 
 </LinearLayout>
