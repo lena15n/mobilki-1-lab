@@ -5,7 +5,6 @@
             android:checkableBehavior="single">
         <item
             android:id="@+id/bio"
-            android:textColor="@color/colorText"
             android:title="@string/action_bio"/>
     </group>
 

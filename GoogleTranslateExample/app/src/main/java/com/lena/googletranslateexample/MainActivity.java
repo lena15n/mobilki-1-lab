@@ -1,6 +1,7 @@
 package com.lena.googletranslateexample;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -103,9 +104,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.bio) {
 
         } else if (id == R.id.tags) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.action_buy) {
-
+        } else if (id == R.id.settings) {
+            Intent intent = new Intent(this, SimpleSettingsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
