@@ -32,4 +32,33 @@
         <item name="android:textColor">@color/colorText</item>
     </style>
 
+
+
+
+
+    <!-- APP Theme which extends Theme App Compact -->
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat">
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
+        <item name="actionOverflowButtonStyle">@style/OverflowButton</item>
+
+        <item name="android:dropDownListViewStyle">@style/PopupMenuListView</item>
+        <item name="dropDownListViewStyle">@style/PopupMenuListView</item>
+
+        <item name="actionBarDivider">@null</item>
+
+        <!-- OverFlow Menu Text Color -->
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <!-- Set Custom Icon for Overflow Button in ActionBar -->
+    <style name="OverflowButton" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_toolbar_question</item>
+    </style>
+    <!-- OverFlow menu Styles -->
+    <style name="PopupMenuListView" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:divider">#FF0000</item>
+        <item name="android:dividerHeight">2dp</item>
+        <item name="android:background">#33B5E5</item>
+    </style>
+
 </resources>
