@@ -1,6 +1,8 @@
 package com.lena.googletranslateexample;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -72,9 +74,18 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch (id){
             case R.id.action_about: {
-                FragmentManager fragmentManager = getFragmentManager();
-                AboutFragment  aboutFragment = new AboutFragment();
-                aboutFragment.show(fragmentManager, getString(R.string.about_dialog_title));
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.about_dialog_title)
+                        .setMessage(R.string.about_dialog_text)
+                        .setPositiveButton(R.string.ok_button_text, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        });//.setView(getActivity().getLayoutInflater().inflate(R.layout.fragment_about, null));
+
+                //setStyle(DialogFragment.STYLE_NO_TITLE, R.style.MyDialog);
+                builder.create();
+                builder.show();
 
                 return true;
             }

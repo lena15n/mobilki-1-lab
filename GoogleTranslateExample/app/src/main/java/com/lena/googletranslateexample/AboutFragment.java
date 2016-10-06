@@ -17,8 +17,9 @@ public class AboutFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         dismiss();
                     }
-                });
+                });//.setView(getActivity().getLayoutInflater().inflate(R.layout.fragment_about, null));
 
+        //setStyle(DialogFragment.STYLE_NO_TITLE, R.style.MyDialog);
         return builder.create();
     }
 }
