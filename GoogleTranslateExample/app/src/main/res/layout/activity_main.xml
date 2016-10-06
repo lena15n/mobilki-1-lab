@@ -9,7 +9,8 @@
     android:background="@color/colorBackground"
     android:fitsSystemWindows="true"
     android:textColor="@color/colorText"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    app:popupTheme="@style/AppTheme.PopupOverlay">
 
     <include
         layout="@layout/app_bar_main"
