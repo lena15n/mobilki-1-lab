@@ -8,12 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionOverflowButtonStyle">@style/ToolbarOverflowTheme</item>
         <item name="android:listDivider">@color/colorDivivder</item>
-        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
-        <item name="android:itemTextAppearance">@style/TextAppearance</item>
-    </style>
-
-    <style name="TextAppearance">
-        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -29,27 +23,8 @@
         <item name="android:src">@drawable/ic_toolbar_navigation</item>
     </style>
 
-    <!-- указано, но ни на что не влияет -->
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:actionMenuTextColor">@color/colorAccent</item>
-    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-    <item name="android:actionMenuTextColor">@color/colorPrimary</item>
-    <item name="android:itemTextAppearance">@style/TextAppearance</item></style>
-
-
-    <style name="MyDialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTitleStyle">@null</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
-        <item name="android:gravity">center</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>

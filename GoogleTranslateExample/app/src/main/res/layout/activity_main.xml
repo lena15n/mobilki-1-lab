@@ -31,19 +31,19 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:layout_marginTop="54dp"
-        android:background="@color/colorPrimary"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
+        android:background="@color/colorPrimary"
         app:itemIconTint="@color/colorText"
         app:itemTextColor="@color/colorText"
         app:menu="@menu/activity_main_drawer"
+        app:headerLayout="@layout/nav_header"
         >
     </android.support.design.widget.NavigationView>
+
+
 
 
     <!--
            android:divider=""
            android:showDividers="middle"-->
-
-
 </android.support.v4.widget.DrawerLayout>
