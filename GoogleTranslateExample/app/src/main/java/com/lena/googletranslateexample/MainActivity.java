@@ -2,6 +2,7 @@ package com.lena.googletranslateexample;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer != null) {
             drawer.addDrawerListener(toggle);
             toggle.syncState();
+
+            drawer.setScrimColor(Color.argb(30, 0, 0, 0));
+
+            //drawer.setDrawerShadow(R.drawable.ic_toolbar_question, GravityCompat.START);
         }
 
         //toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
