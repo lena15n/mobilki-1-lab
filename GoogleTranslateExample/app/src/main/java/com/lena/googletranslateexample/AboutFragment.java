@@ -11,7 +11,7 @@ public class AboutFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         StyleAlertDialog adb = new StyleAlertDialog(getActivity(), R.style.AlertDialogCustom);
-        adb.setView(getActivity().getLayoutInflater().inflate(R.layout.fragment_about, null));
+        //adb.setView(getActivity().getLayoutInflater().inflate(R.layout.fragment_about, ));
         adb.setTitle("Aboutt");
         adb.setButton(AlertDialog.BUTTON_POSITIVE, "Okk", new DialogInterface.OnClickListener() {
             @Override
@@ -20,7 +20,7 @@ public class AboutFragment extends DialogFragment {
             }
         });
                 //adb.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        return new android.support.v7.app.AlertDialog.Builder(getActivity(), R.style.AlertDialogCustom).show();
+        return adb;//return new android.support.v7.app.AlertDialog.Builder(getActivity(), R.style.AlertDialogCustom).show();
     }
 
     private class StyleAlertDialog extends AlertDialog {

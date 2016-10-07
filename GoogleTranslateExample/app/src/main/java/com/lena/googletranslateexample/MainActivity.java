@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
             toggle.syncState();
         }
 
-        toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
+        //toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
