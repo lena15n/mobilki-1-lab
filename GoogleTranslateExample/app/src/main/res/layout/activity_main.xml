@@ -11,6 +11,7 @@
     android:textColor="@color/colorText"
     tools:openDrawer="start"
     app:popupTheme="@style/AppTheme.PopupOverlay"
+    android:windowFullscreen="true"
     >
 
     <include
@@ -24,7 +25,7 @@
 
         <View android:layout_width="match_parent"
               android:layout_height="1dp"
-              android:background="?android:attr/listDivider"/>
+              />
     </FrameLayout>
 
     <android.support.design.widget.NavigationView
@@ -34,11 +35,13 @@
         android:layout_gravity="start"
         android:layout_marginTop="54dp"
         android:fitsSystemWindows="true"
-        android:background="@color/colorPrimary"
-        app:itemIconTint="@color/colorText"
+        app:itemIconTint="@color/colorPrimary"
         app:itemTextColor="@color/colorText"
         app:menu="@menu/activity_main_drawer"
         app:headerLayout="@layout/nav_header"
+        android:windowFullscreen="true"
+        android:divider="@drawable/divider"
+        android:background="@color/colorPrimary"
         >
     </android.support.design.widget.NavigationView>
 

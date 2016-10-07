@@ -6,14 +6,15 @@
               android:layout_width="wrap_content"
               android:layout_height="match_parent"
               android:weightSum="1"
-              android:background="@color/colorPrimary">
+              android:background="@color/colorPrimary"
+              android:alpha="100">
 
     <ImageView
         android:layout_width="104dp"
         android:layout_height="109dp"
         app:srcCompat="@mipmap/ic_avatar_no_transparent"
         android:id="@+id/imageView"
-        />
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="@string/action_username"
