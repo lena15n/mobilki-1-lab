@@ -11,7 +11,6 @@
     android:textColor="@color/colorText"
     tools:openDrawer="start"
     app:popupTheme="@style/AppTheme.PopupOverlay"
-    android:windowFullscreen="true"
     >
 
     <include
@@ -22,10 +21,6 @@
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
-
-        <View android:layout_width="match_parent"
-              android:layout_height="1dp"
-              />
     </FrameLayout>
 
     <android.support.design.widget.NavigationView
@@ -33,16 +28,15 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="75dp"
         android:fitsSystemWindows="true"
         app:itemIconTint="@color/colorPrimary"
         app:itemTextColor="@color/colorText"
         app:menu="@menu/activity_main_drawer"
         app:headerLayout="@layout/nav_header"
-        android:windowFullscreen="true"
         android:divider="@drawable/divider"
-        android:background="@color/colorPrimary"
-        >
+        android:background="@color/colorPrimary">
+        <!-- without time line on top:   android:windowFullscreen="true"-->
     </android.support.design.widget.NavigationView>
 
 

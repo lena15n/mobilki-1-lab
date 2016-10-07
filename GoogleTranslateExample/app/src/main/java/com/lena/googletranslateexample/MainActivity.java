@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
+        /* without time line on top:   getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
 
 
     }
