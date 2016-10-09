@@ -19,7 +19,7 @@ public class ExitFragment extends DialogFragment {
                 })
                 .setNegativeButton(R.string.yes_button_text, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        getActivity().finish();
+                        getActivity().moveTaskToBack(true);
                     }
                 });
 

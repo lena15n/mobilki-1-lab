@@ -30,12 +30,13 @@
         android:layout_gravity="start"
         android:layout_marginTop="75dp"
         android:fitsSystemWindows="true"
-        app:itemIconTint="@color/colorPrimary"
         app:itemTextColor="@color/colorText"
         app:menu="@menu/activity_main_drawer"
         app:headerLayout="@layout/nav_header"
         android:divider="@drawable/divider"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        app:elevation="15dp"
+        app:insetForeground="@android:color/transparent">
         <!-- without time line on top:   android:windowFullscreen="true"-->
     </android.support.design.widget.NavigationView>
 

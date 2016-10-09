@@ -109,5 +109,14 @@
 
     <string name="divider">\t</string>
 
+    <string name="new_note">New note</string>
+    <string name="add_notes">Add some notes here</string>
+    <string name="news">Some cool news everyone!</string>
+    <string name="inner_text">To my mind, the best Android apps exel in two areas: excellence and elegance. An excellent app provides something that no other app can.</string>
+    <string name="adv">Advertisement from Haulmont</string>
+    <string name="adv_inner">Do you want to use the best full stack application Framework?</string>
+    <string name="buy">Buy</string>
+
+
 
 </resources>
