@@ -7,7 +7,8 @@
               android:layout_height="match_parent"
               android:weightSum="1"
               android:background="@color/colorPrimary"
-              android:alpha="100">
+              android:alpha="100"
+              android:layout_marginTop="@dimen/nav_header_vertical_spacing">
 
     <ImageView
         android:layout_width="104dp"

@@ -28,7 +28,6 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="75dp"
         android:fitsSystemWindows="true"
         app:itemTextColor="@color/colorText"
         app:menu="@menu/activity_main_drawer"
@@ -36,7 +35,7 @@
         android:divider="@drawable/divider"
         android:background="@color/colorPrimary"
         app:elevation="15dp"
-        app:insetForeground="@android:color/transparent">
+        app:insetForeground="?attr/colorControlHighlight">
         <!-- without time line on top:   android:windowFullscreen="true"-->
     </android.support.design.widget.NavigationView>
 

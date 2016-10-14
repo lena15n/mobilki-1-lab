@@ -35,15 +35,7 @@
         <item name="android:listDivider">@color/colorDivider</item>
     </style>
 
-    <style name="AlertDialogCustom" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
-        <!-- @android:style/Theme.Holo.Dialog.NoActionBar, Theme.DeviceDefault.Light.Dialog as parent looks like good -->
-        <item name="android:textColorPrimary">@color/colorText</item>
-
-        <!-- to clear border behind (mb of parent fragment) -->
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <!-- to clear border behind (mb of parent fragment) -->
-
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:typeface">sans</item>
         <item name="android:textSize">15sp</item>
     </style>
