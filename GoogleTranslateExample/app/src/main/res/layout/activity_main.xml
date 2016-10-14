@@ -35,7 +35,7 @@
         android:divider="@drawable/divider"
         android:background="@color/colorPrimary"
         app:elevation="15dp"
-        app:insetForeground="?attr/colorControlHighlight">
+        app:insetForeground="?android:attr/colorBackground">
         <!-- without time line on top:   android:windowFullscreen="true"-->
     </android.support.design.widget.NavigationView>
 

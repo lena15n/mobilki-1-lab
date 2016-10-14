@@ -15,7 +15,8 @@
         android:layout_height="109dp"
         app:srcCompat="@mipmap/ic_avatar_no_transparent"
         android:id="@+id/imageView"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/add_notes"/>
 
     <TextView
         android:text="@string/action_username"

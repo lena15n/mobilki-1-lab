@@ -54,6 +54,13 @@
         android:background="@color/colorPrimary"
         android:padding="5dp"
         android:id="@+id/news_layout">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            tools:text="@string/news"/>
     </LinearLayout>
 
     <LinearLayout
