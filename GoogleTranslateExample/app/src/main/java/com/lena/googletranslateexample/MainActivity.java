@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity
             navigationView.setNavigationItemSelectedListener(this);
         }
 
+        toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
+
         ImageButton shareButton = (ImageButton) findViewById(R.id.imageview_share);
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
