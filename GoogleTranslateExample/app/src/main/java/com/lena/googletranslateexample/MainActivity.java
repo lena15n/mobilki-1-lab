@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -46,6 +48,21 @@ public class MainActivity extends AppCompatActivity
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
+
+        ImageButton shareButton = (ImageButton) findViewById(R.id.imageview_share);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Your body here";
+                String shareSub = "Your subject here";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share using"));
+            }
+        });
         /* without time line on top:   getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
 
 
