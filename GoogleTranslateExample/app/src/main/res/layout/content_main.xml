@@ -29,8 +29,6 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 style="@style/Font"
                 android:inputType="textPersonName"
                 android:text="@string/new_note"
@@ -42,8 +40,7 @@
 
         <EditText
             android:id="@+id/editTextDown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Font"
             android:inputType="textEmailAddress"
             android:text="@string/add_notes"
             android:ems="10"/>
