@@ -12,7 +12,7 @@ public class AboutFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());//, R.style.AlertDialogCustom);
         builder.setTitle(R.string.about_dialog_title)
                 .setMessage(R.string.about_dialog_text)
-                .setNeutralButton(R.string.ok_button_text, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_text, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dismiss();
                     }
