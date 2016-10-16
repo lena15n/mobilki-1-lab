@@ -49,9 +49,8 @@
     </style>
 
 
-    <!-- Base application theme. -->
+    <!-- Google Translate Example Theme -->
     <style name="gtAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -67,4 +66,5 @@
     <style name="gtAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="gtAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <!-- Google Translate Example Theme -->
 </resources>
