@@ -21,6 +21,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/gt_nav_header_main"
-        app:menu="@menu/gt_activity_main_drawer"/>
+        app:menu="@menu/gt_activity_main_drawer"
+        app:insetForeground="@color/gt_colorPrimaryDark"/>
 
 </android.support.v4.widget.DrawerLayout>
