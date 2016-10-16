@@ -133,6 +133,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.settings) {
             Intent intent = new Intent(this, SimpleSettingsActivity.class);
             startActivity(intent);
+        } else if (id == R.id.translate) {
+           Intent intent = new Intent(this, GoogleTranslateExampleActivity.class);
+           startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
