@@ -9,6 +9,9 @@
 
     <color name="gt_colorPrimary">#588efc</color>
     <color name="gt_colorPrimaryDark">#4f71b7</color>
+    <color name="gt_colorBackground">#e7e7e7</color>
+    <color name="gt_colorItems">#ffffff</color>
     <color name="gt_colorRed">#ff0000</color>
     <color name="gt_colorBlack">#000000</color>
+    <color name="gt_colorGray">#717171</color>
 </resources>

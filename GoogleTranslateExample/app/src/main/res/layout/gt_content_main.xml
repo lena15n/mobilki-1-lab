@@ -13,7 +13,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.lena.googletranslateexample.GoogleTranslateExampleActivity"
     tools:showIn="@layout/gt_app_bar_main"
-    android:padding="0dp">
+    android:padding="0dp"
+    android:background="@color/gt_colorBackground">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,23 +23,91 @@
 
         <LinearLayout
             android:id="@+id/gt_translate_layout"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/gt_new_layout"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/gt_colorItems">
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/gt_new_layout"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/gt_colorItems"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:paddingEnd="16dp">
+
+
+            <ImageView
+                app:srcCompat="@drawable/ic_gt_adv_small"
+                android:id="@+id/imageView2"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:id="@+id/gy_adv_label_layout"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_toEndOf="@id/imageView2"
+                >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/gt_adv_title_part1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_gt_adv_title_part1"
+                        android:paddingEnd="8dp"
+                        android:textColor="@color/gt_colorRed"
+                        android:textStyle="bold"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:text="@string/gt_adv_title_part2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_gt_adv_title_part2"
+                        android:textColor="@color/gt_colorBlack"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:text="@string/gt_adv_inner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_gt_adv_inner"
+                    android:textColor="@color/gt_colorGray"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:text="@string/gt_adv_last"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_gt_adv_last"
+                    android:textColor="@color/gt_colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:paddingTop="4dp"/>
+            </LinearLayout>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/gt_note_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp">
+            android:layout_margin="8dp"
+            android:background="@color/gt_colorItems">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -53,13 +122,17 @@
                     android:text="@string/gt_my_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView3"/>
+                    android:id="@+id/textView_gt_my_note"
+                    android:textColor="@color/gt_colorBlack"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:text="@string/gt_my_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView"/>
+                    android:id="@+id/textView_gt_my_note_inner"
+                    android:textColor="@color/gt_colorGray"
+                    android:textSize="16sp"/>
             </LinearLayout>
 
             <ImageView
@@ -67,7 +140,7 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_star_border_black_24px"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/gt_imageview_adv"
+                android:id="@+id/gt_imageview_note"
                 android:paddingEnd="16dp"
                 android:paddingBottom="8dp"
                 android:paddingTop="8dp"/>
