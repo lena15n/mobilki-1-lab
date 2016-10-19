@@ -144,7 +144,11 @@
     <string name="gt_feedback">Help &amp; feedback</string>
     <!-- / Google Translate Example strings -->
 
-
+    <string-array name="languages">
+        <item>English</item>
+        <item>Polish</item>
+        <item>Russian</item>
+    </string-array>
 
 
 
