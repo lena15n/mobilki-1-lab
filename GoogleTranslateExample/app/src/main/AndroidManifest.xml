@@ -23,8 +23,9 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings">
         </activity>
-        <activity android:name=".GoogleTranslateExampleActivity"
-                  android:theme="@style/gtAppTheme">
+        <activity
+            android:name=".GoogleTranslateExampleActivity"
+            android:theme="@style/gtAppTheme">
         </activity>
     </application>
 

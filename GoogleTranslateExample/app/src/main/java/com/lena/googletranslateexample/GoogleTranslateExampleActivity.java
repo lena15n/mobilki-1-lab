@@ -1,7 +1,6 @@
 package com.lena.googletranslateexample;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,9 +21,8 @@ import android.widget.Toast;
 
 public class GoogleTranslateExampleActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    final String[] dayOfWeek = {"Sunday", "Monday", "Tuesday",
-            "Wednesday", "Thursday", "Friday", "Saturday"};
+    String[] languages;
+    boolean[] downloadedLanguages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,44 +41,49 @@ public class GoogleTranslateExampleActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
+        languages = getResources().getStringArray(R.array.languages);
+        downloadedLanguages = new boolean[]{false, true, false};
 
-        Resources res = getResources();
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
-
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-
-
-
-        Spinner mySpinner = (Spinner)findViewById(R.id.spinner2);
-        CustomArrayAdapter adapter2 = new CustomArrayAdapter(this,
-                R.id.item_textview, dayOfWeek);
-        mySpinner.setAdapter(adapter2);
-
-        mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        CustomArrayAdapter customArrayAdapter = new CustomArrayAdapter(this, R.id.item_layout, languages);
+        Spinner fromSpinner = (Spinner) findViewById(R.id.from_spinner);
+        fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             public void onItemSelected(AdapterView<?> parent,
                                        View itemSelected, int selectedItemPosition, long selectedId) {
-
-                String[] choose = dayOfWeek;
+                //debug
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Ваш выбор: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);
+                        "Translate from " + languages[selectedItemPosition], Toast.LENGTH_SHORT);
                 toast.show();
             }
+
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Ваш fdsf: ", Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
+
+        fromSpinner.setAdapter(customArrayAdapter);
+
+        Spinner toSpinner = (Spinner) findViewById(R.id.to_spinner);
+        toSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent,
+                                       View itemSelected, int selectedItemPosition, long selectedId) {
+                //debug
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Translate to " + languages[selectedItemPosition], Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        toSpinner.setAdapter(customArrayAdapter);
     }
 
+
     public class CustomArrayAdapter extends ArrayAdapter<String> {
-        public CustomArrayAdapter(Context context, int textViewResourceId,
-                                  String[] objects) {
+        CustomArrayAdapter(Context context, int textViewResourceId,
+                           String[] objects) {
             super(context, textViewResourceId, objects);
             // TODO Auto-generated constructor stub
         }
@@ -88,27 +91,36 @@ public class GoogleTranslateExampleActivity extends AppCompatActivity
         @Override
         public View getDropDownView(int position, View convertView,
                                     ViewGroup parent) {
-            // TODO Auto-generated method stub
             return getCustomView(position, convertView, parent);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-            return getCustomView(position, convertView, parent);
+            return getCustomText(position, convertView, parent);
         }
 
-        public View getCustomView(int position, View convertView,
-                                  ViewGroup parent) {
+        private View getCustomText(int position, View convertView,
+                                   ViewGroup parent) {
             LayoutInflater inflater = getLayoutInflater();
             View row = inflater.inflate(R.layout.gt_spinner_item, parent, false);
-            TextView label = (TextView) row.findViewById(R.id.item_textview);
-            label.setText(dayOfWeek[position]);
+            TextView label = (TextView) row.findViewById(R.id.gt_item_textview);
+            label.setText(languages[position]);
+            label.setTextColor(getColor(R.color.gt_colorPrimary));
 
-            ImageView icon = (ImageView) row.findViewById(R.id.icon);
 
-            if (dayOfWeek[position].equals("Thursday")
-                    || dayOfWeek[position].equals("Saturday")) {
+            return label;
+        }
+
+        private View getCustomView(int position, View convertView,
+                                   ViewGroup parent) {
+            LayoutInflater inflater = getLayoutInflater();
+            View row = inflater.inflate(R.layout.gt_spinner_item, parent, false);
+            TextView label = (TextView) row.findViewById(R.id.gt_item_textview);
+            label.setText(languages[position]);
+
+            ImageView icon = (ImageView) row.findViewById(R.id.gt_item_icon);
+
+            if (!downloadedLanguages[position]) {
                 icon.setImageResource(R.drawable.ic_file_download_black_24px);
             } else {
                 icon.setImageResource(R.color.gt_colorItems);
