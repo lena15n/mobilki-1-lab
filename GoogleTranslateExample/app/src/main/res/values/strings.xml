@@ -149,5 +149,6 @@
         <item>Polish</item>
         <item>Russian</item>
     </string-array>
+    <string name="title_activity_for_settings_fragment">ForSettingsFragmentActivity</string>
 
 </resources>

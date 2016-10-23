@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,7 +130,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.settings) {
-            Intent intent = new Intent(this, SimpleSettingsActivity.class);
+            /*getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new SettingsFragment())
+                    .commit();*/
+            Intent intent = new Intent(this, ForSettingsFragmentActivity.class);
             startActivity(intent);
         } else if (id == R.id.translate) {
             Intent intent = new Intent(this, GoogleTranslateExampleActivity.class);
