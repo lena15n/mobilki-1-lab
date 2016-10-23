@@ -23,6 +23,11 @@
         <SwitchPreference android:key="pref_buy"
                           android:title="@string/settings_instant_buy"
                           android:defaultValue="false"/>
+        <com.lena.googletranslateexample.DatePreference
+            android:key="pref_date"
+            android:title="@string/settings_today"
+            android:defaultValue="2014-08-01"
+            android:summary="Summary"/>
 
     </PreferenceCategory>
 </PreferenceScreen>
