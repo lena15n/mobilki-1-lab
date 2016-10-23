@@ -60,6 +60,7 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
                 p.setSummary(editTextPref.getText());
             }
         }*/
+            ///
 
         }
 
