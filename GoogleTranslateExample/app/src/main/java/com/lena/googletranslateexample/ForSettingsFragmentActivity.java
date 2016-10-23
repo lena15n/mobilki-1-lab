@@ -31,6 +31,7 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
             EditTextPreference preference = (EditTextPreference) findPreference("pref_sound");
             preference.setSummary(preference.getText());
 
+            //
         /*private void initSummary(Preference p) {
             if (p instanceof PreferenceGroup) {
                 PreferenceGroup pGrp = (PreferenceGroup) p;
