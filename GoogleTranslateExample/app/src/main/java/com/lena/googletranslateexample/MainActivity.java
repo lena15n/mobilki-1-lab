@@ -1,5 +1,8 @@
 package com.lena.googletranslateexample;
 
+import android.app.FragmentManager;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,31 +12,59 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         if (drawer != null) {
             drawer.addDrawerListener(toggle);
             toggle.syncState();
+
+            drawer.setScrimColor(Color.argb(30, 0, 0, 0));
+
+            //drawer.setDrawerShadow(R.drawable.ic_toolbar_question, GravityCompat.START);
         }
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
+
+        toolbar.setNavigationIcon(R.drawable.ic_toolbar_navigation);
+
+        ImageButton shareButton = (ImageButton) findViewById(R.id.imageview_share);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.adv));
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.adv_inner));
+                startActivity(Intent.createChooser(sharingIntent, getString(R.string.share)));
+            }
+        });
+        /* without time line on top:   getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
+
+
     }
 
     @Override
@@ -63,15 +94,22 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch (id){
             case R.id.action_about: {
-                Toast.makeText(this, "ab lol", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                AboutFragment  aboutFragment = new AboutFragment();
+                aboutFragment.show(fragmentManager, getString(R.string.about_dialog_title));
+
                 return true;
             }
-            case R.id.action_settings: {
-                Toast.makeText(this, "settnigs lol", Toast.LENGTH_SHORT).show();
+            case R.id.action_buy: {
+                Toast.makeText(this, R.string.buy_product_text, Toast.LENGTH_SHORT).show();
+
                 return true;
             }
             case  R.id.action_exit: {
-                Toast.makeText(this, "exitt lol", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                ExitFragment  exitFragment = new ExitFragment();
+                exitFragment.show(fragmentManager, getString(R.string.exit_dialog_title));
+
                 return true;
             }
         }
@@ -85,19 +123,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.user_name) {
-            // Handle the camera action
-        } else if (id == R.id.bio) {
+        if (id == R.id.bio) {
 
         } else if (id == R.id.tags) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.action_settings) {
-
+        } else if (id == R.id.settings) {
+            /*getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new SettingsFragment())
+                    .commit();*/
+            Intent intent = new Intent(this, ForSettingsFragmentActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.translate) {
+            Intent intent = new Intent(this, GoogleTranslateExampleActivity.class);
+            startActivity(intent);
         }
         ///
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
+        if (drawer != null) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
         return true;
     }
 }

@@ -18,6 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity
+            android:name=".GoogleTranslateExampleActivity"
+            android:theme="@style/gtAppTheme">
+        </activity>
+        <activity
+            android:name=".ForSettingsFragmentActivity"
+            android:label="@string/title_activity_for_settings_fragment"
+            android:parentActivityName="com.lena.googletranslateexample.MainActivity">
+        </activity>
     </application>
 
 </manifest>

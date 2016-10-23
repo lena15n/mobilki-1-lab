@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/title_activity_settings">
+    <PreferenceCategory
+        android:key="pref_key_storage_settings_general"
+        android:title="@string/settings_general">
+        <EditTextPreference
+            android:key="pref_sound"
+            android:title="@string/settings_sound"
+            android:dialogTitle="Enter ur Galactic Name"
+            android:summary="@string/settings_default_sound"
+            android:defaultValue="@string/settings_default_sound"/>
+        <SwitchPreference android:key="pref_notifications"
+                          android:title="@string/settings_notifications"
+                          android:defaultValue="true"/>
+
+        <com.rarepebble.colorpicker.ColorPreference
+                android:key="pref_color"
+                android:title="@string/settings_color"
+                android:defaultValue="@color/gt_colorPrimary"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_advertisement"
+                        android:key="pref_key_storage_settings_advertisment">
+        <SwitchPreference android:key="pref_buy"
+                          android:title="@string/settings_instant_buy"
+                          android:defaultValue="false"/>
+        <com.lena.googletranslateexample.DatePreference
+            android:key="pref_date"
+            android:title="@string/settings_today"
+            android:summary="Summary"
+            android:defaultValue="21.10.2016"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

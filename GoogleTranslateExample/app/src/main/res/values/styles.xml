@@ -1,11 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorText</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowButtonStyle">@style/ToolbarOverflowTheme</item>
+        <item name="android:listDivider">@color/colorDivider</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="alertDialogTheme">@style/AlertDialogCustom</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -13,8 +19,67 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ToolbarOverflowTheme" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_toolbar_question</item>
+    </style>
+
+    <style name="ToolbarNavigationTheme" parent="Widget.Design.NavigationView">
+        <item name="android:src">@drawable/ic_toolbar_navigation</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <!-- Right menu actions (about, buy, exit) settings -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:divider">@drawable/divider</item>
+        <item name="android:listDivider">@color/colorDivider</item>
+    </style>
 
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Font" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:typeface">monospace</item>-->
+    </style>
+
+
+    <!-- Google Translate Example Theme -->
+    <style name="gtAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item> -->
+        <item name="colorPrimary">@color/gt_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/gt_colorPrimaryDark</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="spinnerStyle">@style/SpinnerAppTheme</item>-->
+    </style>
+
+    <style name="gtAppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="gtAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="gtAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+   <!-- <style name="SpinnerAppTheme" parent="android:Widget.Spinner">
+        <item name="android:dropDownSelector">@color/gt_colorPrimary</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/gt_colorPrimary</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/gt_divider</item>
+    </style>-->
+    <!-- Google Translate Example Theme -->
 </resources>
