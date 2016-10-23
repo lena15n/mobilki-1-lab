@@ -9,13 +9,13 @@ import android.widget.DatePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
+import java.util.Date;
 
 public class DatePreference extends DialogPreference {
-    private final static String delimiter = "-";
-    private int lastDate = 0;
-    private int lastMonth = 0;
-    private int lastYear = 0;
+    private final static String delimiter = ".";
+    private int lastDay;
+    private int lastMonth;
+    private int lastYear;
     private String dateValue;
     private CharSequence mSummary;
     private DatePicker picker = null;
@@ -32,14 +32,14 @@ public class DatePreference extends DialogPreference {
         picker = new DatePicker(getContext());
         picker.setCalendarViewShown(false);
 
-        return (picker);
+        return picker;
     }
 
     @Override
     protected void onBindDialogView(View v) {
         super.onBindDialogView(v);
 
-        picker.updateDate(lastYear, lastMonth + 1, lastDate);
+        picker.updateDate(lastYear, lastMonth - 1, lastDay);
     }
 
     @Override
@@ -47,16 +47,15 @@ public class DatePreference extends DialogPreference {
         super.onDialogClosed(positiveResult);
 
         if (positiveResult) {
+            lastDay = picker.getDayOfMonth();
+            lastMonth = picker.getMonth() + 1;
             lastYear = picker.getYear();
-            lastMonth = picker.getMonth();
-            lastDate = picker.getDayOfMonth();
 
-            String date = String.valueOf(lastYear) + delimiter
-                    + String.valueOf(lastMonth) + delimiter
-                    + String.valueOf(lastDate);
+            String date = String.valueOf(lastDay) + delimiter + String.valueOf(lastMonth) + delimiter + String.valueOf(lastYear);
 
-            if (callChangeListener(date)) {
+            if (!mSummary.equals(date)) {
                 persistString(date);
+                setSummary(date);
             }
         }
     }
@@ -71,24 +70,27 @@ public class DatePreference extends DialogPreference {
         dateValue = null;
 
         if (restoreValue) {
-            if (defaultValue == null) {
-                Calendar cal = Calendar.getInstance();
-                SimpleDateFormat format1 = new SimpleDateFormat("yyyy" + delimiter + "MM" + delimiter + "dd", Locale.US);
-                String formatted = format1.format(cal.getTime());
-                dateValue = getPersistedString(formatted);
-            } else {
-                dateValue = getPersistedString(defaultValue.toString());
-            }
+            dateValue = getPersistedString((String) defaultValue);
         } else {
-            dateValue = defaultValue.toString();
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat format = new SimpleDateFormat("dd" + delimiter + "MM" + delimiter + "yyyy");
+            Date today = calendar.getTime();
+            dateValue = format.format(today);
+            //get from my_prefs.xml default value
+            //dateValue = defaultValue.toString();
+
         }
 
-        lastYear = getYear(dateValue);
+        lastDay = getDay(dateValue);
         lastMonth = getMonth(dateValue);
-        lastDate = getDate(dateValue);
+        lastYear = getYear(dateValue);
+
+        String date = String.valueOf(lastDay) + delimiter + String.valueOf(lastMonth) + delimiter + String.valueOf(lastYear);
+
+        setSummary(date);
     }
 
-    public void setText(String text) {
+    /*public void setText(String text) {
         final boolean wasBlocking = shouldDisableDependents();
 
         dateValue = text;
@@ -99,7 +101,7 @@ public class DatePreference extends DialogPreference {
         if (isBlocking != wasBlocking) {
             notifyDependencyChange(isBlocking);
         }
-    }
+    }*/
 
     public String getText() {
         return dateValue;
@@ -117,18 +119,18 @@ public class DatePreference extends DialogPreference {
         }
     }
 
-    private static int getYear(String date) {
-        String[] pieces = date.split(delimiter);
+    private static int getDay(String date) {
+        String[] pieces = date.split("\\" + delimiter);
         return (Integer.parseInt(pieces[0]));
     }
 
     private static int getMonth(String date) {
-        String[] pieces = date.split(delimiter);
+        String[] pieces = date.split("\\" + delimiter);
         return (Integer.parseInt(pieces[1]));
     }
 
-    private static int getDate(String date) {
-        String[] pieces = date.split(delimiter);
+    private static int getYear(String date) {
+        String[] pieces = date.split("\\" + delimiter);
         return (Integer.parseInt(pieces[2]));
     }
 }

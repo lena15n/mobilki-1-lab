@@ -26,8 +26,8 @@
         <com.lena.googletranslateexample.DatePreference
             android:key="pref_date"
             android:title="@string/settings_today"
-            android:defaultValue="2014-08-01"
-            android:summary="Summary"/>
+            android:summary="Summary"
+            android:defaultValue="21.10.2016"/>
 
     </PreferenceCategory>
 </PreferenceScreen>
