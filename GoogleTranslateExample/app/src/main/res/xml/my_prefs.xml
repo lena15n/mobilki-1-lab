@@ -8,6 +8,7 @@
             android:key="pref_sound"
             android:title="@string/settings_sound"
             android:dialogTitle="Enter ur Galactic Name"
+            android:summary="@string/settings_default_sound"
             android:defaultValue="@string/settings_default_sound"/>
         <SwitchPreference android:key="pref_notifications"
                           android:title="@string/settings_notifications"

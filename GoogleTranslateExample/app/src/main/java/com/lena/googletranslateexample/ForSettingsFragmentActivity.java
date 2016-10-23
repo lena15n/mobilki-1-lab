@@ -2,7 +2,7 @@ package com.lena.googletranslateexample;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
+import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
@@ -15,7 +15,6 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
-
     }
 
     public static class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -25,6 +24,43 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.my_prefs);
+            restorePreferencesValues();
+        }
+
+        private void restorePreferencesValues() {
+            EditTextPreference preference = (EditTextPreference) findPreference("pref_sound");
+            preference.setSummary(preference.getText());
+
+        /*private void initSummary(Preference p) {
+            if (p instanceof PreferenceGroup) {
+                PreferenceGroup pGrp = (PreferenceGroup) p;
+                for (int i = 0; i < pGrp.getPreferenceCount(); i++) {
+                    initSummary(pGrp.getPreference(i));
+                }
+            } else {
+                updatePrefSummary(p);
+            }
+        }
+
+        private void updatePrefSummary(Preference p) {
+            if (p instanceof ListPreference) {
+                ListPreference listPref = (ListPreference) p;
+                p.setSummary(listPref.getEntry());
+            }
+            if (p instanceof EditTextPreference) {
+                EditTextPreference editTextPref = (EditTextPreference) p;
+                if (p.getTitle().toString().toLowerCase().contains("password")) {
+                    p.setSummary("******");
+                } else {
+                    p.setSummary(editTextPref.getText());
+                }
+            }
+            if (p instanceof MultiSelectListPreference) {
+                EditTextPreference editTextPref = (EditTextPreference) p;
+                p.setSummary(editTextPref.getText());
+            }
+        }*/
+
         }
 
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,10 +74,11 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (key.equals("SOME_CONST")) {
-                Preference connectionPref = findPreference(key);
+            if (key.equals("pref_sound")) {
+                EditTextPreference preference = (EditTextPreference) findPreference(key);
+
                 // Set summary to be the user-description for the selected value
-                connectionPref.setSummary(sharedPreferences.getString(key, ""));
+                preference.setSummary(sharedPreferences.getString(key, ""));
             }
         }
 
@@ -60,6 +97,5 @@ public class ForSettingsFragmentActivity extends PreferenceActivity {
             getPreferenceScreen().getSharedPreferences()
                     .unregisterOnSharedPreferenceChangeListener(this);
         }
-
     }
 }
