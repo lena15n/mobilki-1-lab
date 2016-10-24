@@ -25,6 +25,8 @@
 
     <string name="buy_product_text">Ok, just give me a dollar</string>
 
+
+    <!-- Strings related to Settings -->
     <string name="settings_general">General</string>
     <string name="settings_sound">Sound</string>
     <string name="settings_default_sound">Default sound la la la</string>
@@ -34,21 +36,18 @@
     <string name="settings_instant_buy">Instant buy</string>
     <string name="settings_today">Today</string>
     <string name="settings_">No</string>
+    <string name="settings_enter_sound">Enter your favourite sound</string>
+    <string name="settings_enter_date">Enter date</string>
     <string name="title_activity_settings">Settings</string>
-
-    <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
-
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
     </string>
-
     <string name="pref_title_display_name">Display name</string>
     <string name="pref_default_display_name">John Smith</string>
-
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string-array name="pref_example_list_titles">
         <item>Always</item>
@@ -63,7 +62,6 @@
 
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync">Data &amp; sync</string>
-
     <string name="pref_title_sync_frequency">Sync frequency</string>
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
@@ -150,5 +148,6 @@
         <item>Russian</item>
     </string-array>
     <string name="title_activity_for_settings_fragment">ForSettingsFragmentActivity</string>
+
 
 </resources>

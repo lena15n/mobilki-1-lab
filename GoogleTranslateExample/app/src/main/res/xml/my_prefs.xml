@@ -7,7 +7,7 @@
         <EditTextPreference
             android:key="pref_sound"
             android:title="@string/settings_sound"
-            android:dialogTitle="Enter ur Galactic Name"
+            android:dialogTitle="@string/settings_enter_sound"
             android:summary="@string/settings_default_sound"
             android:defaultValue="@string/settings_default_sound"/>
         <SwitchPreference android:key="pref_notifications"
@@ -27,6 +27,7 @@
         <com.lena.googletranslateexample.DatePreference
             android:key="pref_date"
             android:title="@string/settings_today"
+            android:dialogTitle="@string/settings_enter_date"
             android:summary="Summary"
             android:defaultValue="21.10.2016"/>
 
