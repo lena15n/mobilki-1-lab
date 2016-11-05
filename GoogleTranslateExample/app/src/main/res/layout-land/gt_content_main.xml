@@ -15,6 +15,10 @@
     tools:showIn="@layout/gt_app_bar_main"
     android:padding="0dp"
     android:background="@color/gt_colorBackground">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/ScrollView01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
 
     <LinearLayout
         android:orientation="vertical"
@@ -233,5 +237,6 @@
         </RelativeLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
