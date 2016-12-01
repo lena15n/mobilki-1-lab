@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/colorBackground"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.lena.googletranslateexample.MainActivity"
+        tools:showIn="@layout/app_bar_main"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/note_layout"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp"
+            android:layout_marginTop="48dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    style="@style/Font"
+                    android:inputType="text"
+                    android:hint="@string/new_note"
+                    android:ems="10"
+                    android:id="@+id/editTextUp"
+                    android:gravity="left|center_vertical"
+                    android:drawableStart="@android:drawable/ic_menu_edit"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/editTextDown"
+                style="@style/Font"
+                android:inputType="text"
+                android:ems="10"
+                android:hint="@string/add_notes"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/news_layout"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="@string/news"
+                    android:paddingBottom="8dp"
+                    android:layout_width="0dp"
+                    style="@style/Font"
+                    android:textStyle="normal|bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+
+                <ImageButton
+                    android:id="@+id/imageview_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:src="@android:drawable/ic_menu_share"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_view_news"
+                android:text="@string/inner_text"
+                style="@style/Font"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/adv_layout"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="@string/adv"
+                    style="@style/Font"
+                    android:textStyle="normal|bold"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+
+                <ImageButton
+                    android:layout_width="19dp"
+                    android:layout_height="17dp"
+                    app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+                    android:id="@+id/imageButton_adv_close"
+                    android:background="@color/colorPrimary"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/adv_inner"
+                style="@style/Font"
+                android:paddingBottom="8dp"/>
+
+            <Button
+                android:text="@string/ok_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/ok_adv_button"/>
+        </LinearLayout>
+
+    </LinearLayout> </ScrollView>

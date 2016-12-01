@@ -30,8 +30,8 @@
 
             <EditText
                 style="@style/Font"
-                android:inputType="textPersonName"
-                android:text="@string/new_note"
+                android:inputType="text"
+                android:hint="@string/new_note"
                 android:ems="10"
                 android:id="@+id/editTextUp"
                 android:gravity="left|center_vertical"
@@ -41,8 +41,8 @@
         <EditText
             android:id="@+id/editTextDown"
             style="@style/Font"
-            android:inputType="textEmailAddress"
-            android:text="@string/add_notes"
+            android:inputType="text"
+            android:hint="@string/add_notes"
             android:ems="10"/>
 
     </LinearLayout>
